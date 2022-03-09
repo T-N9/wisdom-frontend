@@ -1,0 +1,42 @@
+@function calUni($e) {
+    @return calc($e / 16px)+rem;
+}
+
+// Colors
+$primary-color: #3D3991;
+$accent-color: #5852D1;
+$dark-color: #1D1B46;
+$festival-color: #F9F871;
+$carnation-color: #FA5B57;
+$success-color: #36C980;
+$text-color: #455A64;
+$white: #FFFFFF;
+
+// Import fonts
+@font-face {
+    font-family: MyanmarSagar;
+    src: url(../fonts/MyanmarSagar.ttf);
+}
+
+@font-face {
+    font-family: MyanmarAngoun;
+    src: url(../fonts/MyanmarAngoun.ttf);
+}
+
+@font-face {
+    font-family: MyanmarSanPro;
+    src: url(../fonts/MyanmarSansPro.ttf);
+}
+
+// Font families
+$font-primary: MyanmarSagar;
+$font-heading: MyanmarAngoun;
+$font-minor: MyanmarSanPro;
+$font-english: 'Montserrat', sans-serif;
+
+// Font sizes
+$fs-900: calUni(48px);
+
+@include m-breakpoint-down(small){
+    $fs-900: 2.5rem;
+}

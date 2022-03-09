@@ -1,0 +1,265 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/utilities';
+
+.about_page_wrapper {
+    padding-top: 7rem;
+}
+
+.intro_jum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 calUni(125px);
+    margin-top: calUni(-40px);
+
+    @include m-breakpoint-down(lmedium) {
+        flex-direction: column;
+    }
+
+    @include m-breakpoint-down(small) {
+        padding: 0 15px;
+    }
+
+    .intro_txt {
+        flex: 1;
+
+        @include m-breakpoint-down(lmedium) {
+            margin-bottom: 40px;
+        }
+
+        & > p {
+            padding-right: 3.125rem;
+
+            @include m-breakpoint-down(lmedium) {
+                padding-right: 3.125rem;
+            }
+
+            @include m-breakpoint-down(small) {
+                padding-right: 0;
+            }
+        }
+
+        .eng_txt {
+            font-weight: 500;
+        }
+    }
+
+    .intro_img {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include m-breakpoint-down(small) {
+            width: 90%;
+        }
+    }
+}
+
+.mission_wrapper {
+    position: relative;
+    padding: calUni(60px);
+
+    @include m-breakpoint-down(small) {
+        padding: calUni(60px) 10px;
+        padding-top: 7rem;
+    }
+
+    .title_txt{
+        margin: auto;
+    }
+
+    .branch {
+
+        @include m-breakpoint-down(small) {
+            width: 50%;
+        }
+    }
+
+    .branch_left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    .branch_right {
+        position: absolute;
+        right: 0;
+        bottom: -60px;
+        z-index: -2;
+    }
+
+    .mission_grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10px 30px;
+        align-items: baseline;
+
+        @include m-breakpoint-down(large) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card_wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: calUni(50px);
+
+            @include m-breakpoint-down(large) {
+                padding: 3.125rem 10rem;
+            }
+
+            @include m-breakpoint-down(small) {
+                padding: 3.125rem 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .card_img {
+                margin-bottom: calUni(35px) !important;
+            }
+
+            .card_title {
+                color: $accent-color;
+                font-size: calUni(24px);
+
+            }
+
+        }
+    }
+}
+
+.status_wrapper {
+    display: flex;
+    justify-content: center;
+    margin: calUni(60px) 0;
+    margin-top: 6rem;
+}
+
+.status_grid {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    grid-gap: calUni(45px);
+
+    @include m-breakpoint-down(large){
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m-breakpoint-down(small){
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    > .card_wrapper:nth-child(2).wow-fade-in{
+        @include m-breakpoint-up(large) {
+            animation: wow-fade-in 400ms ease-in both 300ms;
+        }
+    }
+
+    > .card_wrapper:nth-child(3).wow-fade-in{
+        @include m-breakpoint-up(large) {
+            animation: wow-fade-in 400ms ease-in both 500ms;
+        }
+    }
+
+    > .card_wrapper:nth-child(4).wow-fade-in{
+        @include m-breakpoint-up(large) {
+            animation: wow-fade-in 400ms ease-in both 700ms;
+        }
+    }
+
+
+    .card_wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 270px;
+        height: 270px;
+        background: linear-gradient(180deg, #5D57DE 0%, #5852D1 100%);
+        border-radius: 20px;
+        color: white;
+        padding-top: 15px;
+        box-shadow: 0px 5px 18px rgba(0, 0, 0, 0.25);
+
+        .card_text {
+            font-size: 18px;
+        }
+
+        .card_number {
+            font-size: calUni(68px);
+            color: $festival-color;
+            line-height: 0.5;
+        }
+
+        p {
+            margin-bottom: unset;
+        }
+    }
+}
+
+.vision_jum {
+    display: flex;
+    padding: calUni(20px) calUni(180px);
+    padding-bottom: 2rem;
+
+    @include m-breakpoint-down(large) {
+        flex-direction: column;
+    }
+
+    @include m-breakpoint-down(small) {
+        padding: calUni(20px) 15px;
+    }
+
+    .vision_img{
+        flex: 1;
+
+        @include m-breakpoint-down(large) {
+            margin-bottom: calUni(20px);
+        }
+
+        @include m-breakpoint-down(small) {
+            img {
+                width: 90%;
+            }
+            @include flex-center;
+        }
+    }
+
+    .vision_txt {
+        flex: 1;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include m-breakpoint-down(large) {
+            text-align: left;
+        }
+
+        .title_txt {
+            margin-left: auto;
+            margin-bottom: 30px;
+
+            @include m-breakpoint-down(large) {
+                margin-right: auto;
+                margin-left: unset;
+            }
+        }
+
+        .para_txt {
+            padding-left: calUni(55px);
+
+            @include m-breakpoint-down(large) {
+                padding-left: unset;
+                padding-right: calUni(55px);
+            }
+
+            @include m-breakpoint-down(small) {
+                padding-right: unset;
+            }
+        }
+    }
+}

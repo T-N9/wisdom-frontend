@@ -1,0 +1,10 @@
+export { default as Student} from './status-student.svg';
+export { default as Teacher} from './status-teacher.svg';
+export { default as Course} from './status-course.svg';
+export { default as Project} from './status-project.svg';
+export {default as Education} from './global-education.svg';
+export {default as Hand} from './hand.svg';
+export {default as SelfStudy} from './selfstudy.svg';
+export {default as BranchLeft} from './branch-left.svg';
+export {default as BranchRight} from './branch-right.svg';
+export {default as Vision} from './vision.svg';

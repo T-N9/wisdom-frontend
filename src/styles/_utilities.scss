@@ -1,0 +1,103 @@
+/* ----------------------------------------------------- 
+    Utilities
+----------------------------------------------------- */
+
+.container {
+    max-width: 1425px;
+    margin: auto;
+}
+  
+.d_none {
+    display: none !important;
+}
+
+.d_block {
+    display: block;
+}
+
+.flex_auto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@include m-breakpoint-up(xlarge) {
+  .hide_on_desktop {
+    display: none !important;
+  }
+}
+
+@include m-breakpoint-down(large) {
+  .hide_on_mobile {
+    display: none !important;
+  }
+}
+
+.title_txt {
+  color: $primary-color;
+  font-size: calUni(38px);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 35%;
+    bottom: 4px;
+    left: 0;
+    border-radius: 20px;
+    background-color: $carnation-color;
+
+    @include m-breakpoint-down(small) {
+      width: 45%;
+    }
+  }
+}
+
+.title_txt.under_space {
+  display: table;
+
+  &::after {
+    width: 100%;
+    bottom: -8px;
+  }
+}
+
+.title_txt.in_dark {
+  color: $white;
+
+  &::after {
+    background-color: $festival-color;
+  }
+}
+
+.para_txt {
+  font-size: calUni(18px);
+  letter-spacing: 0.02em;
+
+  @include m-breakpoint-down(small) {
+    font-size: 1rem;
+  }
+}
+
+.eng_txt {
+  font-family: $font-english;
+}
+
+.accent_txt {
+  color: $accent-color;
+}
+
+.wow-fade-in {
+  animation: wow-fade-in 400ms ease-in both;
+}

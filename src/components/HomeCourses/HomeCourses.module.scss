@@ -1,0 +1,167 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+@import '../../styles/utilities';
+
+.courses {
+    padding-top: 4.25rem;
+}
+
+.course_grid {
+    display: grid;
+    padding: calUni(60px);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: calUni(28px);
+    padding-bottom: calUni(30px);
+
+    @include m-breakpoint-down(large) {
+        grid-template-columns: 1fr;
+    }
+
+    @include m-breakpoint-down(small) {
+        padding: calUni(60px) 20px;
+    }
+}
+
+.course_page_wrapper {
+    // background: ;
+    background-image: url("https://www.transparenttextures.com/patterns/graphy.png"),linear-gradient(180deg, #3D3991 0%, #5D57DE 52.08%, #3D3991 100%);
+    background-blend-mode: screen;
+    padding-top: 3.75rem;
+    padding-bottom: calUni(50px);
+
+    .title_txt {
+        margin: auto;
+    }
+
+    .course_page {
+        .course_other_btn {
+            display: table;
+            margin: auto;
+            width: 147px;
+            height: 42px;
+            color: $success-color;
+            background-color: transparent;
+            font-size: calUni(18px);
+            border: 1px solid $success-color;
+        }
+    }
+
+    .card_wrapper {
+        max-width: calUni(605px);
+        height: calUni(319px);
+        color: $white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #5D57DE;
+        padding: calUni(25px);
+        box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+
+        @include m-breakpoint-down(large) {
+            margin: auto;
+        }
+
+        @include m-breakpoint-down(small) {
+            flex-direction: column;
+            height: auto;
+            padding: calUni(25px) 15px;
+        }
+
+        .card_img {
+            position: relative;
+
+            @include m-breakpoint-down(small) {
+                margin-bottom: 15px;
+            }
+            .bubble {
+                position: absolute;
+                z-index: 1;
+                background: rgba(92, 92, 142, 0.4);
+                border-radius: 50%;
+            }
+
+            .bubble.up {
+                top: -35px;
+                left: -10px;
+                width: calUni(104px);
+                height: calUni(104px);
+
+                @include m-breakpoint-down(small) {
+                    top: 10px;
+                    left: unset;
+                    right: calUni(-40px);
+                }
+            }
+
+            .bubble.down {
+                bottom: -20px;
+                left: 20px;
+                width: calUni(58px);
+                height: calUni(58px);
+
+                @include m-breakpoint-down(small) {
+                    top: 50px;
+                    left: -35px;
+                    bottom: unset;
+                }
+            }
+
+            .card_avatar {
+                position: relative;
+                display: block;
+                background-color: #f5f5f5;
+                width: calUni(186px);
+                height: calUni(186px);
+                border-radius: 50%;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                z-index: 5;
+
+                @include flex-center;
+
+                img {
+                    width: 80%;
+                }
+            }
+        }
+
+        .card_txt {
+            padding-left: 20px;
+
+            @include m-breakpoint-down(small) {
+                padding: 0;
+            }
+
+            .card_title {
+                font-size: calUni(28px);
+                font-weight: 600;
+                color: $festival-color;
+            }
+
+            .card_social {
+                display: flex;
+
+                > *:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+
+            .card_links {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .detail_btn {
+                    font-size: calUni(14px);
+                    background-color: $carnation-color;
+                    width: 155px;
+                    height: 44px;
+                    border-radius: 15px;
+                    color: $white;
+                    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+}
